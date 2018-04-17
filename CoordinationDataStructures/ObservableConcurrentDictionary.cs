@@ -195,5 +195,14 @@ namespace System.Collections.Concurrent
             set { UpdateWithNotification(key, value); }
         }
         #endregion
+
+        /// <summary>
+        /// Clear the dictionary
+        /// </summary>
+        public void Clear()
+        {
+            _dictionary.Clear();
+            NotifyObserversOfChange();
+        }
     }
 }
